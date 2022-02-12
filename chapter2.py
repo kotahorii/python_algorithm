@@ -60,11 +60,20 @@
 # print(factorial_num)
 
 
-def culc_factorial(n: int) -> int:
-    if n == 0:
-        return 1
-    return n * culc_factorial(n - 1)
+# def culc_factorial(n: int) -> int:
+#     if n == 0:
+#         return 1
+#     return n * culc_factorial(n - 1)
 
 
-for i in range(21):
-    print(culc_factorial(i))
+# for i in range(21):
+#     print(culc_factorial(i))
+
+# num_list = [10, -5, 0, 29, 6, 2, 77, 8]
+
+# for num in num_list:
+#     if num % 2 == 0:
+#         print(f"{num} is even")
+#     else:
+#         print(f"{num} is odd")
+
