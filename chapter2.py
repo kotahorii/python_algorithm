@@ -27,9 +27,13 @@
 # print(sum_number(10))
 
 
-def sum_number(n: int) -> int:
-    total = (1 + n) * (n / 2)
-    return int(total)
+# def sum_number(n: int) -> int:
+#     total = (1 + n) * (n / 2)
+#     return int(total)
 
 
-print(sum_number(9))
+# print(sum_number(9))
+
+for i in range(1, 10):
+    for j in range(1, 10):
+        print(f"{i} * {j} = {i*j}")
