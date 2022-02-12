@@ -35,5 +35,8 @@
 # print(sum_number(9))
 
 for i in range(1, 10):
+    calc_results = ""
     for j in range(1, 10):
-        print(f"{i} * {j} = {i*j}")
+        calc_results += f"{j} * {i} = {i*j:2d}, "
+
+    print(calc_results)
