@@ -34,9 +34,21 @@
 
 # print(sum_number(9))
 
-for i in range(1, 10):
-    calc_results = ""
-    for j in range(1, 10):
-        calc_results += f"{j} * {i} = {i*j:2d}, "
+# for i in range(1, 10):
+#     calc_results = ""
+#     for j in range(1, 10):
+#         calc_results += f"{j} * {i} = {i*j:2d}, "
 
-    print(calc_results)
+#     print(calc_results)
+
+for devidend in range(2, 101):
+    max_range = devidend // 2
+    is_prime_number = True
+
+    for devisor in range(2, max_range + 1):
+        if devidend % devisor == 0:
+            is_prime_number = False
+            break
+
+    if is_prime_number:
+        print(devidend)
