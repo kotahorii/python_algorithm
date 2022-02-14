@@ -77,14 +77,60 @@ class DoublyLinkedList:
             current_node = None
             return
 
+    def reverse_iterative(self) -> None:
+        previous_node = None
+        current_node = self.head
+        while current_node:
+            previous_node = current_node.prev
+            current_node.prev = current_node.next
+            current_node.next = previous_node
+
+            current_node = current_node.prev
+        if previous_node:
+            self.head = previous_node.prev
+
+    def reverse_recursive(self) -> None:
+        def _reverse_recursive(current_node: Node | None) -> Node | None:
+            if not current_node:
+                return None
+
+            previous_node = current_node.prev
+            current_node.prev = current_node.next
+            current_node.next = previous_node
+
+            if current_node.prev is None:
+                return current_node
+
+            return _reverse_recursive(current_node.prev)
+
+        self.head = _reverse_recursive(self.head)
+
+    def sort(self) -> None:
+        if self.head is None:
+            return
+
+        current_node: Node = self.head
+
+        while current_node.next:
+            next_node = current_node.next
+            while next_node:
+                if current_node.data > next_node.data:
+                    current_node.data, next_node.data = (
+                        next_node.data,
+                        current_node.data,
+                    )
+                next_node = next_node.next
+
+            current_node = current_node.next
+
 
 if __name__ == "__main__":
     doubly = DoublyLinkedList()
-    doubly.append(0)
     doubly.append(1)
+    doubly.append(5)
     doubly.append(2)
-    doubly.append(3)
+    doubly.append(9)
     doubly.print()
     print("############# remove")
-    doubly.remove(3)
+    doubly.sort()
     doubly.print()
