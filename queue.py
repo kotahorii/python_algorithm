@@ -2,16 +2,12 @@ from collections import deque
 from typing import Any
 
 
-class Queue:
-    def __init__(self) -> None:
-        self.queque: list[Any] = []
+def reverse(queue: deque[Any]) -> deque[Any]:
+    new_queue: deque[Any] = deque()
+    while queue:
+        new_queue.append(queue.pop())
 
-    def enqueue(self, data: Any) -> None:
-        self.queque.append(data)
-
-    def dequeue(self) -> Any:
-        if self.queque:
-            return self.queque.pop(0)
+    return new_queue
 
 
 if __name__ == "__main__":
@@ -21,4 +17,4 @@ if __name__ == "__main__":
     que.append(3)
     que.append(4)
     print(que)
-    print(que.popleft())
+    print(reverse(que))
